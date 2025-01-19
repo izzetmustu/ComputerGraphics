@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 
 #include <string>
+#include <stdexcept>
 
 class Window{
   private:
@@ -17,4 +18,5 @@ class Window{
     Window& operator=(const Window&) = delete;
     ~Window();
     bool shouldClose(){return glfwWindowShouldClose(window);}
+    void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 };

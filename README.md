@@ -1,1 +1,1 @@
-### Some computer graphics exercises
+### Some computer graphics practices

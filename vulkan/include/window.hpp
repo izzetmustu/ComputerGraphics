@@ -14,9 +14,12 @@ class Window{
     void initWindow();
   public:
     Window(int width, int height, std::string title);
+    ~Window();
+    
     Window(const Window&) = delete;
     Window& operator=(const Window&) = delete;
-    ~Window();
+
+    VkExtent2D getExtent(){return {static_cast<uint32_t>(width), static_cast<uint32_t>(height)};}
     bool shouldClose(){return glfwWindowShouldClose(window);}
     void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 };

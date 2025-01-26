@@ -2,6 +2,9 @@
 
 #include <vulkan/vulkan.hpp>
 #include <iostream>
+
+void logDeviceProperties(const vk::PhysicalDevice& device);
+
 /*
 	* Debug call back:
 	*
@@ -61,3 +64,8 @@ VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
     \returns the created messenger
 */
 vk::DebugUtilsMessengerEXT makeDebugMessenger(vk::Instance& instance, vk::DispatchLoaderDynamic& dldi);
+
+std::vector<std::string> logTransformBits(const vk::SurfaceTransformFlagsKHR& flags);
+std::vector<std::string> logCompositeAlphaBits(const vk::CompositeAlphaFlagsKHR& flags);
+std::vector<std::string> logImageUsageBits(const vk::ImageUsageFlags& flags);
+std::vector<std::string> logPresentModeBits(const std::vector<vk::PresentModeKHR>& flags);
